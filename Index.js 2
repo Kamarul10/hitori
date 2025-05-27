@@ -1,0 +1,21 @@
+javascript
+if (text === 'owner') {
+    if (ownerNumber.includes(sender)) {
+        await sock.sendMessage(sender, { text: '✅ Ini arahan khas untuk owner.' });
+    } else {
+        await sock.sendMessage(sender, { text: '❌ Maaf, hanya owner boleh guna arahan ini.' });
+    }
+}
+```
+
+
+
+```javascript
+if (text === 'hai') {
+    await sock.sendMessage(sender, { text: 'Hai!' });
+} else if (text === 'video hd') {
+    await sock.sendMessage(sender, {
+        video: fs.readFileSync('./media/video_hd.mp4'),
+        caption: 'Ini adalah video HD.'
+    });
+}
