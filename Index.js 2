@@ -1,4 +1,18 @@
 kamarul
+
+
+
+   ```javascript
+   const fs = require('fs');
+   const ownerNumber = ['60195974138@s.whatsapp.net']; // ganti dengan nombor anda
+   ``
+   ```javascript
+   sock.ev.on('messages.upsert', async ({ messages }) => {
+       const msg = messages[0];
+       if (!msg.message || msg.key.fromMe) return;
+
+       const sender = msg.key.remoteJid;
+       const text = msg.message.conversation?.toLowerCase() || msg.message.extendedTextMessage?.text?.toLowerCase();
 if (text === 'owner') {
     if (ownerNumber.includes(sender)) {
         await sock.sendMessage(sender, { text: '✅ Ini arahan khas untuk owner.' });
